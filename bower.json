@@ -1,0 +1,24 @@
+{
+  "name": "bcs-video",
+  "description": "BCS Video promo",
+  "main": "index.js",
+  "authors": [
+    "Alexander Andreev"
+  ],
+  "license": "ISC",
+  "moduleType": [
+    "globals"
+  ],
+  "homepage": "https://github.com/cinic/bcs-video#readme",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize.css": "*",
+    "jquery": "2.*"
+  }
+}
