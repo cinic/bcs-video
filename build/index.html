@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <title>BCS Video</title>
+    <meta content="bcs, broker, video" name="description" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link href="/assets/css/vendor/normalize.css" rel="stylesheet" />
+    <link href="/assets/css/main.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="container">
+        <div class="first col" id="first">
+          <div class="box">
+            <div class="item">
+              <div class="question">
+                <h1 class="title">
+                  Начните с подбора<br>инвестиционного продукта
+                </h1>
+                <div class="description">
+                  <p>
+                    Успешное инвестирование начинается с правильно подобранных финансовх инструментов.<br>Расскажите о ваших инвестиционных целях и опыте, мы предложим наши лучшие инвестиционные продукты для их реализации.
+                  </p>
+                </div>
+                <div class="actions">
+                  <button class="btn disabled" data-screen="#first" disabled="disabled" id="btn-start" type="button">Начать</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section col" id="q02">
+          <div class="box">
+            <div class="item">
+              <div class="question">
+                <h2 class="title">
+                  Вы инвестируете деньги в инструменты фондового рынка?
+                </h2>
+                <ul class="answers">
+                  <li>
+                    <button class="btn-answer btn" data-next-question="#q03" data-screen="#q02" type="button">Да, я пользуюсь инвестиционными инструментами</button>
+                  </li>
+                  <li>
+                    <button class="btn-answer btn" data-goto="#q03" data-screen="#q02" data-video-id="0" type="button">Нет, но я знаю о такой возможности</button>
+                  </li>
+                  <li>
+                    <button class="btn-answer btn" data-goto="#q03" data-screen="#q02" data-video-id="1" type="button">Я пользуюсь банковскими вкладами</button>
+                  </li>
+                  <li>
+                    <button class="btn-answer btn" data-goto="#q03" data-screen="#q02" data-video-id="2" type="button">Я не знаком с такой возможностью</button>
+                  </li>
+                </ul>
+              </div>
+              <div class="video">
+                <div class="player"></div>
+                <button class="btn-answer btn" data-next-question="#q03" data-screen="#q02" type="button">Далее</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section col" id="q03">
+          <div class="box">
+            <div class="item">
+              <div class="question">
+                <h2 class="title">
+                  Я предпочитаю...
+                </h2>
+                <ul class="answers">
+                  <li>
+                    <button class="btn-answer btn" data-goto="#q04" data-screen="#q03" data-video-id="0" type="button">самостоятельно торговать на бирже</button>
+                  </li>
+                  <li>
+                    <button class="btn-answer btn" data-goto="#q04" data-screen="#q03" data-video-id="1" type="button">использовать профессиональные инвестиционные решения</button>
+                  </li>
+                  <li>
+                    <button class="btn-answer btn" data-screen="#q03" data-special="#q03" data-video-id="2" type="button">узнать разницу между представленными вариантами</button>
+                  </li>
+                </ul>
+              </div>
+              <div class="video">
+                <div class="player"></div>
+                <button class="btn-answer btn" data-next-question="#q04" data-screen="#q03" type="button">Далее</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section col" id="q04">
+          <div class="box">
+            <div class="item">
+              <div class="question">
+                <h2 class="title">
+                  Какой вы инвестор?
+                </h2>
+                <ul class="answers">
+                  <li>
+                    <button class="btn-answer btn" data-goto="#q05" data-screen="#q04" data-video-id="0" type="button">Консервативный</button>
+                  </li>
+                  <li>
+                    <button class="btn-answer btn" data-goto="#q05" data-screen="#q04" data-video-id="1" type="button">Агрессивный</button>
+                  </li>
+                </ul>
+              </div>
+              <div class="video">
+                <div class="player"></div>
+                <button class="btn-answer btn" data-next-question="#q05" data-screen="#q04" type="button">Далее</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section col" id="q05">
+          <div class="box">
+            <div class="item">
+              <div class="question">
+                <h2 class="title">
+                  Готовы ли вы открыть брокерский счёт в БКС Брокер уже сейчас?
+                </h2>
+                <ul class="answers">
+                  <li>
+                    <button class="btn-answer btn" data-next-question="#q06" data-screen="#q05" type="button">Да, готов открыть счёт</button>
+                  </li>
+                  <li>
+                    <button class="btn-answer btn" data-screen="#q05" data-special="#q05" data-video-id="0" type="button">Узнать размер стартового капитала</button>
+                  </li>
+                  <li>
+                    <button class="btn-answer btn" data-screen="#q05" data-special="#q05" data-video-id="1" type="button">Узнать больше о компании БКС Брокер</button>
+                  </li>
+                  <li>
+                    <button class="btn-answer btn" data-screen="#q05" data-special="#q05" data-video-id="2" type="button">Узнать о возможностях обучения</button>
+                  </li>
+                  <li>
+                    <button class="btn-answer btn" data-screen="#q05" data-special="#q05" data-video-id="3" type="button">Узнать о форме владения акциями</button>
+                  </li>
+                  <li class="hidden">
+                    <button class="btn-answer btn" data-next-question="#q101" data-screen="#q05" type="button">Нет, хочу получить дополнительную консультацию финансового советника</button>
+                  </li>
+                </ul>
+              </div>
+              <div class="video">
+                <div class="player"></div>
+                <button class="btn-answer btn" data-next-question="#q06" data-screen="#q05" type="button">Далее</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section col" id="q06">
+          <div class="box">
+            <div class="item">
+              <div class="question">
+                <h2 class="title">
+                  С какой суммы вы хотели бы начать?
+                </h2>
+                <ul class="answers">
+                  <li>
+                    <input class="form-input" id="investments-amount" type="number" /><button class="btn-answer btn" data-goto="#q07" data-screen="#q06" data-video-id="0" type="button">Продолжить</button>
+                  </li>
+                </ul>
+              </div>
+              <div class="video">
+                <div class="player"></div>
+                <button class="btn-answer btn" data-next-question="#q07" data-screen="#q06" type="button">Далее</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section col" id="q07">
+          <div class="box">
+            <div class="item">
+              <div class="question">
+                <h2 class="title">
+                  Форма открытия счёта
+                </h2>
+                <ul class="answers">
+                  <li>
+                    <button class="btn-account btn" data-goto="#q08" data-screen="#q07" data-video-id="0" type="button">Продолжить</button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="/assets/js/vendor/jquery.js"></script>
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>

@@ -8,4 +8,109 @@ html lang='ru'
     link rel='stylesheet' href='/assets/css/vendor/normalize.css'
     link rel='stylesheet' href='/assets/css/main.css'
   body
-    h1 Hello
+    .main
+      .container
+        #first.first.col
+          .box
+            .item
+              .question
+                h1.title Начните с подбора<br>инвестиционного продукта
+                .description
+                  p Успешное инвестирование начинается с правильно подобранных финансовх инструментов.<br>Расскажите о ваших инвестиционных целях и опыте, мы предложим наши лучшие инвестиционные продукты для их реализации.
+                .actions
+                  button#btn-start.btn.disabled type='button' data-screen='#first' disabled='disabled' Начать
+        #q02.section.col
+          .box
+            .item
+              .question
+                h2.title Вы инвестируете деньги в инструменты фондового рынка?
+                ul.answers
+                  li
+                    button.btn-answer.btn type='button' data-screen='#q02' data-next-question='#q03' Да, я пользуюсь инвестиционными инструментами
+                  li
+                    button.btn-answer.btn type='button' data-screen='#q02' data-goto='#q03' data-video-id='0' Нет, но я знаю о такой возможности
+                  li
+                    button.btn-answer.btn type='button' data-screen='#q02' data-goto='#q03' data-video-id='1' Я пользуюсь банковскими вкладами
+                  li
+                    button.btn-answer.btn type='button' data-screen='#q02' data-goto='#q03' data-video-id='2' Я не знаком с такой возможностью
+              .video
+                .player
+                button.btn-answer.btn type='button' data-screen='#q02' data-next-question='#q03' Далее
+        #q03.section.col
+          .box
+            .item
+              .question
+                h2.title Я предпочитаю...
+                ul.answers
+                  li
+                    button.btn-answer.btn type='button' data-screen='#q03' data-goto='#q04' data-video-id='0' самостоятельно торговать на бирже
+                  li
+                    button.btn-answer.btn type='button' data-screen='#q03' data-goto='#q04' data-video-id='1' использовать профессиональные инвестиционные решения
+                  li
+                    button.btn-answer.btn type='button' data-screen='#q03' data-special='#q03' data-video-id='2' узнать разницу между представленными вариантами
+              .video
+                .player
+                button.btn-answer.btn type='button' data-screen='#q03' data-next-question='#q04' Далее
+        #q04.section.col
+          .box
+            .item
+              .question
+                h2.title Какой вы инвестор?
+                ul.answers
+                  li
+                    button.btn-answer.btn type='button' data-screen='#q04' data-goto='#q05' data-video-id='0' Консервативный
+                  li
+                    button.btn-answer.btn type='button' data-screen='#q04' data-goto='#q05' data-video-id='1' Агрессивный
+              .video
+                .player
+                button.btn-answer.btn type='button' data-screen='#q04' data-next-question='#q05' Далее
+        #q05.section.col
+          .box
+            .item
+              .question
+                h2.title Готовы ли вы открыть брокерский счёт в БКС Брокер уже сейчас?
+                ul.answers
+                  li
+                    button.btn-answer.btn type='button' data-screen='#q05' data-next-question='#q06' Да, готов открыть счёт
+                  li
+                    button.btn-answer.btn type='button' data-screen='#q05' data-special='#q05' data-video-id='0' Узнать размер стартового капитала
+                  li
+                    button.btn-answer.btn type='button' data-screen='#q05' data-special='#q05' data-video-id='1' Узнать больше о компании БКС Брокер
+                  li
+                    button.btn-answer.btn type='button' data-screen='#q05' data-special='#q05' data-video-id='2' Узнать о возможностях обучения
+                  li
+                    button.btn-answer.btn type='button' data-screen='#q05' data-special='#q05' data-video-id='3' Узнать о форме владения акциями
+                  li.hidden
+                    button.btn-answer.btn type='button' data-screen='#q05' data-next-question='#q101' Нет, хочу получить дополнительную консультацию финансового советника
+              .video
+                .player
+                button.btn-answer.btn type='button' data-screen='#q05' data-next-question='#q06' Далее
+        #q06.section.col
+          .box
+            .item
+              .question
+                h2.title С какой суммы вы хотели бы начать?
+                ul.answers
+                  li
+                    input#investments-amount.form-input type='number'
+                    button.btn-answer.btn type='button' data-screen='#q06' data-goto='#q07' data-video-id='0' Продолжить
+              .video
+                .player
+                button.btn-answer.btn type='button' data-screen='#q06' data-next-question='#q07' Далее
+        #q07.section.col
+          .box
+            .item
+              .question
+                h2.title Форма открытия счёта
+                ul.answers
+                  li
+                    button.btn-account.btn type='button' data-screen='#q07' data-goto='#q08' data-video-id='0' Продолжить
+    //javascript:
+      var tag = document.createElement('script');
+
+      tag.src = 'https://www.youtube.com/iframe_api';
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    script src='https://www.youtube.com/iframe_api'
+    script src='/assets/js/vendor/jquery.js'
+    script src='/assets/js/main.js'

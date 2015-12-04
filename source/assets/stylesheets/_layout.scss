@@ -1,0 +1,89 @@
+@import 'variables';
+body {
+  max-width: 1680px;
+  margin: 0 auto;
+  font-size: 18px;
+  font-family: 'ProximaNova';
+  font-weight: 400;
+  line-height: 1.222222;
+  letter-spacing: .05em;
+  color: white;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  
+  .col,
+  .box,
+  .item {
+    height: 100%;
+  }
+  
+  p {
+    margin: 0;
+  }
+  
+  @media (min-width: $screen-xs-max) {
+    width: $container-sm;
+  }
+  
+  @media (min-width: $screen-sm-max) {
+    width: $container-md;
+  }
+
+  @media (min-width: $screen-md-max) {
+    width: $container-lg;
+  }
+}
+
+.btn {
+  display: inline-block;
+  width: 366px;
+  height: 54px;
+  line-height: 54px;
+  font-size: 20px;
+  border: 1px solid white;
+  border-radius: 25px;
+  vertical-align: middle;
+  text-transform: uppercase;
+  background-color: transparent;
+  box-shadow: none;
+  transition: all .2s ease-out;
+  
+  &.btn-answer {
+    padding: .5em 1em;
+    width: auto;
+    height: auto;
+    line-height: 1.222222;
+    border-color: transparent;
+    text-transform: lowercase;
+  }
+  
+  &:hover {
+    //box-shadow: 0px 0px 20px 15px rgba(255,255,255,.5) inset;
+    box-shadow: 0px 0px 5px 2px rgba(255,255,255,.5);
+  }
+  
+  &:active {
+    box-shadow: 0px 0px 10px 5px rgba(255,255,255,.5);
+  }
+  
+  &.disabled,
+  &[disabled] {
+    cursor: progress;
+  }
+}
+
+.hidden { display: none; }
+.clearfix {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}

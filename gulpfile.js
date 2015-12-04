@@ -6,8 +6,9 @@ var gulp = require('gulp'),
   gutil = require('gulp-util'),
   notify = require('gulp-notify'),
   prefixer = require('gulp-autoprefixer'),
-  //sass = require('gulp-ruby-sass'),
-  sass = require('gulp-sass'),
+  sass = require('gulp-ruby-sass'),
+  //sass = require('gulp-sass'),
+  cssmin = require('gulp-minify-css'),
   coffee = require('gulp-coffee'),
   rigger = require('gulp-rigger'),
   slim = require('gulp-slim'),
@@ -30,21 +31,21 @@ var path = {
   src: {
     html: ['source/*.slim', '!source/partials/_*.slim'],
     js: ['source/assets/javascripts/*.coffee', '!source/assets/javascripts/*/_*.coffee'],
-    css: 'source/assets/stylesheets/',
+    sass: 'source/assets/stylesheets/',
     img: 'source/assets/images/**/**/*.*',
     fonts: 'source/assets/fonts/**/*.*'
   },
   vendor: {
-    js: 'source/assets/javascripts/vendor/*.js',
-    css: 'source/assets/stylesheets/vendor/'
+    js: ['source/assets/javascripts/vendor/*.js', '!source/assets/javascripts/**/_*.coffee'],
+    css: 'source/assets/stylesheets/vendor/*.css'
   },
   watch: {
     html: 'source/**/*.slim',
     js: 'source/assets/javascripts/**/*.coffee',
     vendor_js: 'source/assets/javascripts/vendor/*.js',
-    css: 'source/assets/stylesheets/**/*.scss',
+    css: 'source/assets/stylesheets/*.scss',
     vendor_css: 'source/assets/stylesheets/vendor/*.scss',
-    img: 'source/assets/img/**/**/*.*',
+    img: 'source/assets/images/**/**/*.*',
     fonts: 'source/assets/fonts/**/*.*'
   },
   clean: './build'
@@ -88,16 +89,17 @@ gulp.task('js:build', function () {
 
 gulp.task('vendor:js:build', function () {
   return gulp.src(path.vendor.js)
+    .pipe(rigger())
     .pipe(gulp.dest(path.build.vendor_js))
     .pipe(reload({stream: true}));
 });
 
 gulp.task('css:build', function () {
-  return sass(path.src.css, {
+  return sass(path.src.sass, {
     precision: 6,
     style: 'expanded',
     stopOnError: true,
-    loadPath: [ 'source/assets/stylesheets', 'bower_components' ]
+    loadPath: process.cwd() + '/' + path.src.sass
   })
     .on('error', sass.logError)
     .pipe(prefixer())
@@ -105,14 +107,8 @@ gulp.task('css:build', function () {
     .pipe(reload({stream: true}));
 });
 gulp.task('vendor:css:build', function () {
-  return sass(path.vendor.css, {
-    precision: 6,
-    style: 'expanded',
-    stopOnError: true,
-    loadPath: [ 'source/assets/stylesheets/vendor', 'bower_components' ]
-  })
-    .on('error', sass.logError)
-    .pipe(prefixer())
+  return gulp.src(path.vendor.css)
+    .pipe(cssmin())
     .pipe(gulp.dest(path.build.vendor_css))
     .pipe(reload({stream: true}));
 });

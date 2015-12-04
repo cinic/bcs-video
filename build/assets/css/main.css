@@ -1,1 +1,153 @@
+@charset "UTF-8";
 /*@charset UTF-8*/
+/** ProximaNova Regular **/
+@font-face {
+  font-family: 'ProximaNova';
+  src: url("../fonts/proximanova-regular.eot");
+  src: local("☺"), url("../fonts/proximanova-regular.woff") format("woff"), url("../fonts/proximanova-regular.ttf") format("truetype"), url("../fonts/proximanova-regular.svg") format("svg");
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-25CA;
+}
+body {
+  max-width: 1680px;
+  margin: 0 auto;
+  font-size: 18px;
+  font-family: 'ProximaNova';
+  font-weight: 400;
+  line-height: 1.222222;
+  letter-spacing: .05em;
+  color: white;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+}
+.container .col,
+.container .box,
+.container .item {
+  height: 100%;
+}
+.container p {
+  margin: 0;
+}
+@media (min-width: 767px) {
+  .container {
+    width: 740px;
+  }
+}
+@media (min-width: 991px) {
+  .container {
+    width: 960px;
+  }
+}
+@media (min-width: 1199px) {
+  .container {
+    width: 960px;
+  }
+}
+
+.btn {
+  display: inline-block;
+  width: 366px;
+  height: 54px;
+  line-height: 54px;
+  font-size: 20px;
+  border: 1px solid white;
+  border-radius: 25px;
+  vertical-align: middle;
+  text-transform: uppercase;
+  background-color: transparent;
+  box-shadow: none;
+  -webkit-transition: all .2s ease-out;
+          transition: all .2s ease-out;
+}
+.btn.btn-answer {
+  padding: .5em 1em;
+  width: auto;
+  height: auto;
+  line-height: 1.222222;
+  border-color: transparent;
+  text-transform: lowercase;
+}
+.btn:hover {
+  box-shadow: 0px 0px 5px 2px rgba(255, 255, 255, 0.5);
+}
+.btn:active {
+  box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.5);
+}
+.btn.disabled, .btn[disabled] {
+  cursor: progress;
+}
+
+.hidden {
+  display: none;
+}
+
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+
+.main {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #0c7bf8 url("../img/main-bg.jpg") no-repeat 50% 50%;
+  background-size: cover;
+  text-align: center;
+}
+.main .box {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+.main .box .item {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.section {
+  display: none;
+}
+
+.title {
+  margin: 0;
+  margin-bottom: 26px;
+  font-size: 30px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.actions {
+  margin-top: 80px;
+}
+
+.video {
+  display: none;
+}
+.video .player {
+  margin-bottom: 2em;
+}
+.video.active {
+  display: block;
+}
+
+.answers {
+  margin: 2em 0;
+  padding-left: 0;
+  list-style: none;
+}
+.answers > li {
+  margin: 0 0 1em;
+}
