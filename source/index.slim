@@ -92,19 +92,32 @@ html lang='ru'
                 h2.title С какой суммы вы хотели бы начать?
                 ul.answers
                   li
-                    input#investments-amount.form-input type='number'
-                    button.btn-answer.btn type='button' data-screen='#q06' data-goto='#q07' data-video-id='0' Продолжить
+                    input#investments-amount.form-input type='number' placeholder='300000'
+                  li
+                    button.btn-answer.btn type='button' data-screen='#q06' data-goto='#q201' data-video-id='0' Продолжить
               .video
                 .player
-                button.btn-answer.btn type='button' data-screen='#q06' data-next-question='#q07' Далее
+                button.btn-answer.btn type='button' data-screen='#q06' data-next-question='#q201' Далее
         #q07.section.col
+          .box
+            .item
+              .question
+                h2.title Вы готовы увеличить сумму инвестиций?
+                ul.answers
+                  li
+                    button.btn-answer.btn type='button' data-screen='#q07' data-next-question='#q06' Да, готов
+                  li
+                    button.btn-answer.btn type='button' data-screen='#q07' data-goto='#first' data-video-id='0' Нет, я не готов инвестировать больше
+              .video
+                .player
+        #q201.section.col
           .box
             .item
               .question
                 h2.title Форма открытия счёта
                 ul.answers
                   li
-                    button.btn-account.btn type='button' data-screen='#q07' data-goto='#q08' data-video-id='0' Продолжить
+                    button.btn-account.btn type='submit' Открыть счёт
     //javascript:
       var tag = document.createElement('script');
 

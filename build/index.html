@@ -152,13 +152,16 @@
                 </h2>
                 <ul class="answers">
                   <li>
-                    <input class="form-input" id="investments-amount" type="number" /><button class="btn-answer btn" data-goto="#q07" data-screen="#q06" data-video-id="0" type="button">Продолжить</button>
+                    <input class="form-input" id="investments-amount" placeholder="300000" type="number" />
+                  </li>
+                  <li>
+                    <button class="btn-answer btn" data-goto="#q201" data-screen="#q06" data-video-id="0" type="button">Продолжить</button>
                   </li>
                 </ul>
               </div>
               <div class="video">
                 <div class="player"></div>
-                <button class="btn-answer btn" data-next-question="#q07" data-screen="#q06" type="button">Далее</button>
+                <button class="btn-answer btn" data-next-question="#q201" data-screen="#q06" type="button">Далее</button>
               </div>
             </div>
           </div>
@@ -168,11 +171,33 @@
             <div class="item">
               <div class="question">
                 <h2 class="title">
+                  Вы готовы увеличить сумму инвестиций?
+                </h2>
+                <ul class="answers">
+                  <li>
+                    <button class="btn-answer btn" data-next-question="#q06" data-screen="#q07" type="button">Да, готов</button>
+                  </li>
+                  <li>
+                    <button class="btn-answer btn" data-goto="#first" data-screen="#q07" data-video-id="0" type="button">Нет, я не готов инвестировать больше</button>
+                  </li>
+                </ul>
+              </div>
+              <div class="video">
+                <div class="player"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section col" id="q201">
+          <div class="box">
+            <div class="item">
+              <div class="question">
+                <h2 class="title">
                   Форма открытия счёта
                 </h2>
                 <ul class="answers">
                   <li>
-                    <button class="btn-account btn" data-goto="#q08" data-screen="#q07" data-video-id="0" type="button">Продолжить</button>
+                    <button class="btn-account btn" type="submit">Открыть счёт</button>
                   </li>
                 </ul>
               </div>
