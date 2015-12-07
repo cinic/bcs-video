@@ -5,23 +5,22 @@ selfTrade = 0
 aggressive = 0
 videos = {
   1: [],
-  2: ['ekK7peRxKGc', 'uf8OKOt591E', 'sc0mi0Ei1CQ'],
-  3: ['ekK7peRxKGc', 'uf8OKOt591E', 'sc0mi0Ei1CQ'],
-  4: [['LVoElgX2irI', 'Xgm-iOW-uBY'], ['J7UwSVsiwzI', 'vP8RbfSgZtw']], # 0 - not trade it self, 1 - trade it self
-  5: ['0gknoM7tglY', 'uf8OKOt591E', 'sc0mi0Ei1CQ', 'vP8RbfSgZtw'],
+  2: ['0mdoyu8AFt0', 'kVsv9dj-Cl0', 'xiPTMhCwSis'],
+  3: ['S6DxCrNBK8U', 'UkiRAF1LpsU', 'eMklyUDsPT8'],
+  4: [['h_XfxYRI90I', '2Dp88_5Go00'], ['c4dnb_e4rt0', 'fmXfoLGxcqg']], # 0 - not trade it self, 1 - trade it self
+  5: ['16AL5ElxDTY', '16AL5ElxDTY', '16AL5ElxDTY', '16AL5ElxDTY'],
   6: [
       [# not aggressive
-        ['1Kl4rNUTWCA', '9uvlxf94FMI', 'QZfkRsRxxgA', 'XtQkboxauOo', 'Y_TF9N2XlAs'],# 0 - not trade it self, 1 - trade it self
-        ['1Kl4rNUTWCA', 'k6lbKLx6axg', 'ny5vGbTfB8c', 'ny5vGbTfB8c', 'hzv0Jyr5FWE']
+        ['ZyX55eDKr90', 'dk_mEC-cpkw', '1UZw358I6ro', 'kpjn1qfdng8', 'z1Fi9AwRKg8'],# 0 - not trade it self, 1 - trade it self
+        ['ZyX55eDKr90', 'iciDnQPX9qQ', 'lLwYAjd_fWM', 'lLwYAjd_fWM', 'z1Fi9AwRKg8']
       ],
       [# aggressive
-        ['1Kl4rNUTWCA', 'DpN8UskODLE', 'qVFHLBUkGAQ', 's_Q954MTENQ', 'hzv0Jyr5FWE'],# 0 - not trade it self, 1 - trade it self
-        ['1Kl4rNUTWCA', 'DpN8UskODLE', 'ny5vGbTfB8c', 'ny5vGbTfB8c', 'hzv0Jyr5FWE']
+        ['ZyX55eDKr90', 'ud-q_cJlciE', 'fFNM0Yj9fS4', 'MOgszmn-pDk', 'z1Fi9AwRKg8'],# 0 - not trade it self, 1 - trade it self
+        ['ZyX55eDKr90', 'ud-q_cJlciE', 'lLwYAjd_fWM', 'lLwYAjd_fWM', 'z1Fi9AwRKg8']
       ]
   ],
-  7: ['6-DRAV6JSO0']
+  7: ['jaKF0W1Wxuw']
 }
-
 $ ->
   $( btnStart ).on 'click', ->
     $( '#first' ).fadeOut fadeSpeed, ->
