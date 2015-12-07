@@ -8,7 +8,7 @@ videos = {
   2: ['0mdoyu8AFt0', 'kVsv9dj-Cl0', 'xiPTMhCwSis'],
   3: ['S6DxCrNBK8U', 'UkiRAF1LpsU', 'eMklyUDsPT8'],
   4: [['h_XfxYRI90I', '2Dp88_5Go00'], ['c4dnb_e4rt0', 'fmXfoLGxcqg']], # 0 - not trade it self, 1 - trade it self
-  5: ['16AL5ElxDTY', '16AL5ElxDTY', '16AL5ElxDTY', '16AL5ElxDTY'],
+  5: ['zCEcZjzKVn4', 'pfcKHXAzZps', 'vGveKGwXSlw', '16AL5ElxDTY'],
   6: [
       [# not aggressive
         ['ZyX55eDKr90', 'dk_mEC-cpkw', '1UZw358I6ro', 'kpjn1qfdng8', 'z1Fi9AwRKg8'],# 0 - not trade it self, 1 - trade it self
