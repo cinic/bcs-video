@@ -21,9 +21,18 @@ videos = {
   ],
   7: ['jaKF0W1Wxuw']
 }
+  
 $ ->
+  _containerWidth = $( '.container' ).width()
+  switch _containerWidth
+    when 320 then playerWidth = [300, 169]
+    when 760 then playerWidth = [740, 416]
+    when 980 then playerWidth = [960, 540]
+    else
+      playerWidth = [300, 169]
+      
   $( btnStart ).on 'click', ->
-    $( '#first' ).fadeOut fadeSpeed, ->
+    $( '#first, #shadow' ).fadeOut fadeSpeed, ->
       $( '#q02' ).fadeIn fadeSpeed
 
     $( '.btn-answer' ).on 'click', ->
@@ -77,8 +86,8 @@ $ ->
         $( '.question', _screen ).fadeOut fadeSpeed, ->
           $( '.player', _screen ).html('').append( playerBox.attr( 'id', _playerId ) )
           player =  new YT.Player _playerId, {
-                      height: '540',
-                      width: '960',
+                      height: playerWidth[1],
+                      width: playerWidth[0],
                       playerVars:
                         'autoplay': 1,
                         'controls': 1,

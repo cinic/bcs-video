@@ -27,8 +27,23 @@ videos = {
 };
 
 $(function() {
+  var _containerWidth, playerWidth;
+  _containerWidth = $('.container').width();
+  switch (_containerWidth) {
+    case 320:
+      playerWidth = [300, 169];
+      break;
+    case 760:
+      playerWidth = [740, 416];
+      break;
+    case 980:
+      playerWidth = [960, 540];
+      break;
+    default:
+      playerWidth = [300, 169];
+  }
   return $(btnStart).on('click', function() {
-    $('#first').fadeOut(fadeSpeed, function() {
+    $('#first, #shadow').fadeOut(fadeSpeed, function() {
       return $('#q02').fadeIn(fadeSpeed);
     });
     return $('.btn-answer').on('click', function() {
@@ -90,8 +105,8 @@ $(function() {
         return $('.question', _screen).fadeOut(fadeSpeed, function() {
           $('.player', _screen).html('').append(playerBox.attr('id', _playerId));
           player = new YT.Player(_playerId, {
-            height: '540',
-            width: '960',
+            height: playerWidth[1],
+            width: playerWidth[0],
             playerVars: {
               'autoplay': 1,
               'controls': 1,

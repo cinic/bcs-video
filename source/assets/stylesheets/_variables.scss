@@ -38,16 +38,16 @@ $screen-md-max:              ($screen-lg-min - 1) !default;
 
 $grid-gutter-width:         20px !default;
 // Small screen / tablet
-$container-tablet:             (720px + $grid-gutter-width) !default;
+$container-tablet:             (740px + $grid-gutter-width) !default;
 //** For `$screen-sm-min` and up.
 $container-sm:                 $container-tablet !default;
 // Medium screen / desktop
-$container-desktop:            (940px + $grid-gutter-width) !default;
+$container-desktop:            (960px + $grid-gutter-width) !default;
 //** For `$screen-md-min` and up.
 $container-md:                 $container-desktop !default;
 
 // Large screen / wide desktop
 //$container-large-desktop:      (1140px + $grid-gutter-width) !default;
-$container-large-desktop:      (940px + $grid-gutter-width) !default;
+$container-large-desktop:      (960px + $grid-gutter-width) !default;
 //** For `$screen-lg-min` and up.
 $container-lg:                 $container-large-desktop !default;
