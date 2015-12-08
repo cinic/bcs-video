@@ -89,7 +89,8 @@ $ ->
         $( _screen ).fadeOut 100, ->
           $( '.video', _question ).css( 'display', 'none' )
           $( '.question', _question ).css( 'display', 'block' )
-          $( _question ).fadeIn fadeSpeed
+          $( _question ).fadeIn fadeSpeed, ->
+            $( 'body' ).removeClass( 'active-video' )
       else
         $( '.question', _screen ).fadeOut fadeSpeed, ->
           $( '.player', _screen ).html('').append( playerBox.attr( 'id', _playerId ) )
@@ -106,5 +107,6 @@ $ ->
                         #'onStateChange': onPlayerStateChange
                     }
           $( '.video', _screen ).fadeIn fadeSpeed, ->
+            $( 'body' ).addClass( 'active-video' )
             if undefined != _specialBtn
               _this.parent().remove()

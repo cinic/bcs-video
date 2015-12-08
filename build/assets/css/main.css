@@ -18,11 +18,16 @@ body {
   letter-spacing: .05em;
   color: white;
   background-color: #0c7bf8;
+  -webkit-transition: all .4s ease-out;
+          transition: all .4s ease-out;
 }
 @media (min-width: 767px) {
   body {
     font-size: 18px;
   }
+}
+body.active-video {
+  background-color: #064a99;
 }
 
 .container {

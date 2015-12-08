@@ -105,7 +105,9 @@ $(function() {
         return $(_screen).fadeOut(100, function() {
           $('.video', _question).css('display', 'none');
           $('.question', _question).css('display', 'block');
-          return $(_question).fadeIn(fadeSpeed);
+          return $(_question).fadeIn(fadeSpeed, function() {
+            return $('body').removeClass('active-video');
+          });
         });
       } else {
         return $('.question', _screen).fadeOut(fadeSpeed, function() {
@@ -122,6 +124,7 @@ $(function() {
             videoId: _videoId
           });
           return $('.video', _screen).fadeIn(fadeSpeed, function() {
+            $('body').addClass('active-video');
             if (void 0 !== _specialBtn) {
               return _this.parent().remove();
             }

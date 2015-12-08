@@ -9,9 +9,14 @@ body {
   letter-spacing: .05em;
   color: white;
   background-color: #0c7bf8;
+  transition: all .4s ease-out;
   
   @media (min-width: $screen-xs-max) {
     font-size: 18px;
+  }
+  
+  &.active-video {
+    background-color: #064a99;
   }
 }
 
