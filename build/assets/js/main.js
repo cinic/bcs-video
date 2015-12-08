@@ -1,4 +1,4 @@
-var aggressive, btnStart, fadeSpeed, onYouTubeIframeAPIReady, player, playerBox, selfTrade, videos;
+var aggressive, btnStart, fadeSpeed, onYouTubeIframeAPIReady, player, playerBox, playerWidth, selfTrade, setPlayerWidth, videos;
 
 btnStart = '#btn-start';
 
@@ -16,6 +16,8 @@ selfTrade = 0;
 
 aggressive = 0;
 
+playerWidth = false;
+
 videos = {
   1: [],
   2: ['0mdoyu8AFt0', 'kVsv9dj-Cl0', 'xiPTMhCwSis'],
@@ -26,22 +28,26 @@ videos = {
   7: ['jaKF0W1Wxuw']
 };
 
-$(function() {
-  var _containerWidth, playerWidth;
-  _containerWidth = $('.container').width();
-  switch (_containerWidth) {
+setPlayerWidth = function(width) {
+  switch (width) {
     case 320:
-      playerWidth = [300, 169];
-      break;
+      return playerWidth = [300, 169];
     case 760:
-      playerWidth = [740, 416];
-      break;
+      return playerWidth = [740, 416];
     case 980:
-      playerWidth = [960, 540];
-      break;
+      return playerWidth = [960, 540];
     default:
-      playerWidth = [300, 169];
+      return playerWidth = [300, 169];
   }
+};
+
+$(function() {
+  var _containerWidth;
+  _containerWidth = $('.container').width();
+  setPlayerWidth(_containerWidth);
+  $(window).on('resize', function() {
+    return setPlayerWidth(_containerWidth);
+  });
   return $(btnStart).on('click', function() {
     $('#first, #shadow').fadeOut(fadeSpeed, function() {
       return $('#q02').fadeIn(fadeSpeed);

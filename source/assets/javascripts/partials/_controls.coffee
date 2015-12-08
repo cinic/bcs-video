@@ -3,6 +3,8 @@ playerBox = $( '<div class="player-box"></div>' )
 player = false
 selfTrade = 0
 aggressive = 0
+playerWidth = false
+
 videos = {
   1: [],
   2: ['0mdoyu8AFt0', 'kVsv9dj-Cl0', 'xiPTMhCwSis'],
@@ -21,15 +23,21 @@ videos = {
   ],
   7: ['jaKF0W1Wxuw']
 }
-  
-$ ->
-  _containerWidth = $( '.container' ).width()
-  switch _containerWidth
+
+setPlayerWidth = ( width ) ->
+  switch width
     when 320 then playerWidth = [300, 169]
     when 760 then playerWidth = [740, 416]
     when 980 then playerWidth = [960, 540]
     else
       playerWidth = [300, 169]
+$ ->
+  _containerWidth = $( '.container' ).width()
+  setPlayerWidth _containerWidth
+  
+  $( window ).on 'resize', ->
+    setPlayerWidth _containerWidth
+    #$( '.video .plyer iframe' ).css({'width': playerWidth[0], 'height': playerWidth[1]})
       
   $( btnStart ).on 'click', ->
     $( '#first, #shadow' ).fadeOut fadeSpeed, ->

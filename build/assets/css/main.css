@@ -208,6 +208,22 @@ body {
 .video .player {
   margin-bottom: 2em;
 }
+.video .player iframe {
+  width: 300px;
+  height: 169px;
+}
+@media (min-width: 767px) {
+  .video .player iframe {
+    width: 740px;
+    height: 416px;
+  }
+}
+@media (min-width: 991px) {
+  .video .player iframe {
+    width: 960px;
+    height: 540px;
+  }
+}
 .video.active {
   display: block;
 }
