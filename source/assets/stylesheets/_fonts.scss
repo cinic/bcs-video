@@ -1,10 +1,14 @@
 /** ProximaNova Regular **/
 @font-face {
-	font-family: 'ProximaNova';
-	src: url('../fonts/proximanova-regular.eot');
-	src: local('☺'), url('../fonts/proximanova-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/proximanova-regular.woff') format('woff'), url('../fonts/proximanova-regular.ttf') format('truetype'), url('../fonts/proximanova-regular.svg') format('svg');
+	font-family:'ProximaNova';
+	src: url('../fonts/ProximaNova-Regular_gdi.eot');
+	src: url('../fonts/ProximaNova-Regular_gdi.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/ProximaNova-Regular_gdi.woff') format('woff'),
+		url('../fonts/ProximaNova-Regular_gdi.ttf') format('truetype'),
+		url('../fonts/ProximaNova-Regular_gdi.otf') format('opentype'),
+		url('../fonts/ProximaNova-Regular_gdi.svg#ProximaNova-Regular') format('svg');
 	font-weight: 400;
 	font-style: normal;
-  font-stretch: normal;
-  unicode-range: U+0020-25CA;
+	font-stretch: normal;
+	unicode-range: U+0022-2666;
 }
