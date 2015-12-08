@@ -22,6 +22,81 @@
     background-size: cover;
     z-index: 0;
   }
+  .lines {
+    position: absolute;
+    @extend .cover;
+    z-index: 1;
+    
+    .line {
+      &.left,
+      &.right,
+      &.top,
+      &.bottom {
+        position: absolute;
+      }
+      &.left,
+      &.right {
+        top: 50%;
+        margin-top: -1px;
+        width: 256px;
+        height: 2px;
+        background-color: rgba(255,255,255,.3);
+        
+        @media (min-width: $screen-xs-max) {
+          width: 106px;
+        }
+      }
+      &.left {
+        left: 0;
+        .dot {
+          right: 50%;
+          @media (min-width: $screen-xs-max) {
+            right: 0;
+          }
+        }
+        .dot + .dot { right: 0; }
+      }
+      &.right {
+        right: 0;
+        .dot {
+          left: 50%;
+          @media (min-width: $screen-xs-max) {
+            left: 0;
+          }
+        }
+        .dot + .dot { left: 0; }
+      }
+      &.top,
+      &.bottom {
+        left: 50%;
+        margin-left: -1px;
+        width: 2px;
+        height: 92px;
+      }
+      &.top {
+        top: 0;
+        .cross { bottom: 0; }
+      }
+      &.bottom {
+        bottom: 0;
+        .cross { top: 0; }
+      }
+      .cross {
+        position: absolute;
+        font-size: 22px;
+        font-style: normal;
+        color: white;
+      }
+      .dot {
+        position: absolute;
+        top: -4px;
+        width: 10px;
+        height: 10px;
+        background-color: white;
+        border-radius: 10px;
+      }
+    }
+  }
   .box {
     display: table;
     width: 100%;
