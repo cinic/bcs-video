@@ -270,7 +270,7 @@ body.active-video {
 }
 .main .lines .line.top, .main .lines .line.bottom {
   left: 50%;
-  margin-left: -1px;
+  margin-left: -7px;
   width: 2px;
   height: 13%;
 }
