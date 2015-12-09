@@ -21,6 +21,7 @@ var gulp = require('gulp'),
 var path = {
   build: {
     html: 'build/',
+    html_site: '../cinic_rus.bitbucket.org/bcs-video/',
     js: 'build/assets/js/',
     css: 'build/assets/css/',
     img: 'build/assets/img/',
@@ -48,7 +49,8 @@ var path = {
     img: 'source/assets/images/**/**/*.*',
     fonts: 'source/assets/fonts/**/*.*'
   },
-  clean: './build'
+  clean: './build',
+  clean_site: '../cinic_rus.bitbucket.org/bcs-video'
 };
 
 var config = {
@@ -69,6 +71,10 @@ gulp.task('clean', function (cb) {
   rimraf(path.clean, cb);
 });
 
+gulp.task('clean_site', function (cb) {
+  rimraf(path.clean_site, cb);
+});
+
 gulp.task('html:build', function () {
   return gulp.src(path.src.html)
     .pipe(slim({
@@ -78,6 +84,7 @@ gulp.task('html:build', function () {
     }))  // Собираем slim только в папке ./assets/ исключая файлы с _*
     .on('error', console.log) // Если есть ошибки, выводим и продолжаем
     .pipe(gulp.dest(path.build.html)) // Записываем собранные файлы
+    .pipe(gulp.dest(path.build.html_site)) // Публикуем на битбакет
     .pipe(reload({stream: true})); // даем команду на перезагрузку страницы
 });
 
