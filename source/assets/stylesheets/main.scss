@@ -28,6 +28,7 @@
     z-index: 1;
     
     .line {
+      transition: all .3s ease-out;
       &.left,
       &.right,
       &.top,
@@ -38,20 +39,29 @@
       &.right {
         top: 50%;
         margin-top: -1px;
-        width: 256px;
+        width: 0;
         height: 2px;
         background-color: rgba(255,255,255,.3);
         
         @media (min-width: $screen-xs-max) {
-          width: 106px;
+          width: 9%;
+        }
+        @media (min-width: $screen-sm-max) {
+          width: 12%;
+        }
+        @media (min-width: $screen-md-max) {
+          width: 15%;
         }
       }
       &.left {
         left: 0;
         .dot {
-          right: 50%;
+          right: 0;
           @media (min-width: $screen-xs-max) {
             right: 0;
+          }
+          @media (min-width: $screen-sm-max) {
+            right: 50%;
           }
         }
         .dot + .dot { right: 0; }
@@ -59,9 +69,12 @@
       &.right {
         right: 0;
         .dot {
-          left: 50%;
+          left: 0;
           @media (min-width: $screen-xs-max) {
             left: 0;
+          }
+          @media (min-width: $screen-sm-max) {
+            left: 50%;
           }
         }
         .dot + .dot { left: 0; }
@@ -71,7 +84,7 @@
         left: 50%;
         margin-left: -1px;
         width: 2px;
-        height: 92px;
+        height: 13%;
       }
       &.top {
         top: 0;
@@ -109,6 +122,12 @@
   }
 }
 
+.first {
+  .description {
+    margin: 0 auto;
+    width: 80%;
+  }
+}
 .section { display: none; }
 .title {
   margin: 0;
