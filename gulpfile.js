@@ -18,16 +18,25 @@ var gulp = require('gulp'),
   browserSync = require('browser-sync'),
   reload = browserSync.reload;
 
+var sitePath = '../cinic_rus.bitbucket.org/bcs-video/';
 var path = {
   build: {
     html: 'build/',
-    html_site: '../cinic_rus.bitbucket.org/bcs-video/',
     js: 'build/assets/js/',
     css: 'build/assets/css/',
     img: 'build/assets/img/',
     fonts: 'build/assets/fonts/',
     vendor_js: 'build/assets/js/vendor/',
     vendor_css: 'build/assets/css/vendor/'
+  },
+  site: {
+    html: sitePath,
+    js: sitePath + 'assets/js/',
+    css: sitePath + 'assets/css/',
+    img: sitePath + 'assets/img/',
+    fonts: sitePath + 'assets/fonts/',
+    vendor_js: sitePath + 'assets/js/vendor/',
+    vendor_css: sitePath + 'assets/css/vendor/'
   },
   src: {
     html: ['source/*.slim', '!source/partials/_*.slim'],
@@ -84,7 +93,7 @@ gulp.task('html:build', function () {
     }))  // Собираем slim только в папке ./assets/ исключая файлы с _*
     .on('error', console.log) // Если есть ошибки, выводим и продолжаем
     .pipe(gulp.dest(path.build.html)) // Записываем собранные файлы
-    .pipe(gulp.dest(path.build.html_site)) // Публикуем на битбакет
+    .pipe(gulp.dest(path.site.html)) // Публикуем на битбакет
     .pipe(reload({stream: true})); // даем команду на перезагрузку страницы
 });
 
@@ -93,6 +102,7 @@ gulp.task('js:build', function () {
     .pipe(rigger())
     .pipe(coffee({bare: true}).on('error', console.log))
     .pipe(gulp.dest(path.build.js))
+    .pipe(gulp.dest(path.site.js))
     .pipe(reload({stream: true}));
 });
 
@@ -100,6 +110,7 @@ gulp.task('vendor:js:build', function () {
   return gulp.src(path.vendor.js)
     .pipe(rigger())
     .pipe(gulp.dest(path.build.vendor_js))
+    .pipe(gulp.dest(path.site.vendor_js))
     .pipe(reload({stream: true}));
 });
 
@@ -113,12 +124,14 @@ gulp.task('css:build', function () {
     .on('error', sass.logError)
     .pipe(prefixer())
     .pipe(gulp.dest(path.build.css))
+    .pipe(gulp.dest(path.site.css))
     .pipe(reload({stream: true}));
 });
 gulp.task('vendor:css:build', function () {
   return gulp.src(path.vendor.css)
     .pipe(cssmin())
     .pipe(gulp.dest(path.build.vendor_css))
+    .pipe(gulp.dest(path.site.vendor_css))
     .pipe(reload({stream: true}));
 });
 
@@ -132,6 +145,7 @@ gulp.task('image:build', function () {
     }))
     .on('error', console.log) // Если есть ошибки, выводим и продолжаем
     .pipe(gulp.dest(path.build.img))
+    .pipe(gulp.dest(path.site.img))
     //.pipe(notify({
     //  message: "Image: <%= file.relative %>",
     //  title: "Image optimized and published."
@@ -141,7 +155,8 @@ gulp.task('image:build', function () {
 
 gulp.task('fonts:build', function () {
   gulp.src(path.src.fonts)
-    .pipe(gulp.dest(path.build.fonts));
+    .pipe(gulp.dest(path.build.fonts))
+    .pipe(gulp.dest(path.site.fonts));
 });
 
 gulp.task('build', [

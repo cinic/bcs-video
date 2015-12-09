@@ -1,4 +1,4 @@
-var aggressive, btnStart, fadeSpeed, minAmount, onYouTubeIframeAPIReady, player, playerBox, playerWidth, selfTrade, setPlayerWidth, videos;
+var IID, aggressive, btnStart, checkApiYoutube, fadeSpeed, minAmount, onYouTubeIframeAPIReady, player, playerBox, playerWidth, selfTrade, setPlayerWidth, videos;
 
 btnStart = '#btn-start';
 
@@ -6,6 +6,16 @@ onYouTubeIframeAPIReady = function() {
   document.getElementById('btn-start').setAttribute('class', 'btn');
   return document.getElementById('btn-start').removeAttribute('disabled');
 };
+
+checkApiYoutube = function() {
+  if (window['YT']) {
+    document.getElementById('btn-start').setAttribute('class', 'btn');
+    document.getElementById('btn-start').removeAttribute('disabled');
+    return clearInterval(IID);
+  }
+};
+
+IID = setInterval(checkApiYoutube(), 1000);
 
 fadeSpeed = 400;
 
