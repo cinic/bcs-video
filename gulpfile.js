@@ -72,7 +72,9 @@ gulp.task('clean', function (cb) {
 gulp.task('html:build', function () {
   return gulp.src(path.src.html)
     .pipe(slim({
-      pretty: true //Add pretty-indentation whitespace to output (false by default)
+      pretty: true,//Add pretty-indentation whitespace to output (false by default)
+      require: 'slim/include',
+      options: 'include_dirs=[".", "' + process.cwd() + '/source/partials"]',
     }))  // Собираем slim только в папке ./assets/ исключая файлы с _*
     .on('error', console.log) // Если есть ошибки, выводим и продолжаем
     .pipe(gulp.dest(path.build.html)) // Записываем собранные файлы

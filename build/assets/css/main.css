@@ -91,6 +91,17 @@ body.active-video {
   outline: none;
 }
 
+.form-checkbox {
+  display: inline-block;
+  width: 366px;
+}
+.form-checkbox a {
+  color: #efb810;
+}
+.form-checkbox a:hover {
+  text-decoration: none;
+}
+
 .has-error .input-validation-error {
   border-color: #f00;
 }

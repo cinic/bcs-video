@@ -80,6 +80,18 @@ body {
     outline: none;
   }
 }
+
+.form-checkbox {
+  display: inline-block;
+  width: 366px;
+  
+  a {
+    color: #efb810;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
 .input-validation-error {
   .has-error & {
     border-color: #f00;
