@@ -66,6 +66,7 @@ $ ->
         $( '.answers li:last', _screen).removeClass( 'hidden' )
 
       if _set == 6 and _amount != undefined
+        $( '.video', _screen ).children( 'button' ).removeClass( 'btn-consultation' ).text( 'Открыть счёт' )
         if _amount < 300000 and _amount > 50000
           _videoId = videos[_set][aggressive][selfTrade][1]
         else if _amount <= 1000000 and _amount >= 300000

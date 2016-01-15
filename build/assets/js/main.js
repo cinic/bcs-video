@@ -93,6 +93,7 @@ $(function() {
         $('.answers li:last', _screen).removeClass('hidden');
       }
       if (_set === 6 && _amount !== void 0) {
+        $('.video', _screen).children('button').removeClass('btn-consultation').text('Открыть счёт');
         if (_amount < 300000 && _amount > 50000) {
           _videoId = videos[_set][aggressive][selfTrade][1];
         } else if (_amount <= 1000000 && _amount >= 300000) {
