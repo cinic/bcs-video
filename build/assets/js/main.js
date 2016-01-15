@@ -93,7 +93,6 @@ $(function() {
         $('.answers li:last', _screen).removeClass('hidden');
       }
       if (_set === 6 && _amount !== void 0) {
-        console.log(_amount, minAmount);
         if (_amount <= 300000 && _amount > 50000) {
           _videoId = videos[_set][aggressive][selfTrade][1];
         } else if (_amount <= 1000000 && _amount > 300000) {
@@ -103,11 +102,15 @@ $(function() {
         } else if (_amount > 3000000) {
           _videoId = videos[_set][aggressive][selfTrade][4];
         } else {
+          $('.video', _screen).children('button').text('Далее');
           if (minAmount === 0) {
             _videoId = videos[_set][aggressive][selfTrade][0];
           } else {
             _videoId = videos[7][0];
-            $('.video', _screen).children('button').remove();
+            setTimeout((function() {
+              $('.video', _screen).children('button').data('next-question', '#q101');
+              return $('.video', _screen).children('button').addClass('btn-consultation').text('Получить консультацию');
+            }), 500);
           }
           _goto = '#q07';
           minAmount = 1;
@@ -153,4 +156,9 @@ $(function() {
       }
     });
   });
+});
+
+$(function() {
+  $('#BCOfflineForm_city_id').selectize();
+  return $('#BCOfflineForm_city_id2').selectize();
 });

@@ -75,7 +75,7 @@ body.active-video {
   width: 366px;
   height: 48px;
   line-height: 48px;
-  font-size: 28px;
+  font-size: 22px;
   border: 2px solid white;
   border-radius: 25px;
   vertical-align: middle;
@@ -89,6 +89,21 @@ body.active-video {
 }
 .form-input:focus {
   outline: none;
+}
+
+.form-select {
+  display: inline-block;
+  width: 366px;
+  border-radius: 25px;
+  text-transform: lowercase;
+  background-color: white;
+  box-shadow: none;
+}
+.form-select.selectize-dropdown {
+  border: none;
+  border-radius: 0 0 25px 25px;
+  font-size: 18px;
+  line-height: 22px;
 }
 
 .form-checkbox {
@@ -165,6 +180,9 @@ body.active-video {
 .video .btn-answer {
   width: 210px;
 }
+.video .btn-answer.btn-consultation {
+  width: 310px;
+}
 
 .hidden {
   display: none;
@@ -176,6 +194,40 @@ body.active-video {
 }
 .clearfix:after {
   clear: both;
+}
+
+/* Selectize styles */
+.selectize-input {
+  height: 48px;
+  line-height: 48px;
+  font-size: 22px;
+  border: 2px solid white;
+  border-radius: 25px;
+  vertical-align: middle;
+  text-transform: lowercase;
+  text-align: center;
+  background-color: white;
+  box-shadow: none;
+}
+.selectize-input > input {
+  display: none !important;
+}
+.selectize-input > .item {
+  display: inline-block !important;
+  line-height: 28px;
+  vertical-align: top !important;
+}
+.selectize-input.dropdown-active {
+  /*-webkit-border-radius: 3px 3px 0 0;
+  -moz-border-radius: 3px 3px 0 0;
+  border-radius: 3px 3px 0 0;*/
+  border-radius: 25px 25px 0 0;
+}
+.selectize-input.dropdown-active::before {
+  background: none;
+}
+.selectize-input.focus {
+  box-shadow: none !important;
 }
 
 .cover, .main, .main .shadow, .main .lines {

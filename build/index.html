@@ -6,6 +6,7 @@
     <meta content="bcs, broker, video" name="description" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <link href="assets/css/vendor/normalize.css" rel="stylesheet" />
+    <link href="assets/css/vendor/selectize.css" rel="stylesheet" />
     <link href="assets/css/main.css" rel="stylesheet" />
   </head>
   <body>
@@ -157,7 +158,10 @@
                   </h2>
                   <ul class="answers">
                     <li>
-                      <input class="form-input" id="investments-amount" placeholder="300000" type="number" />
+                      <input class="form-input" id="investments-amount" placeholder="300000" type="number" value="300000" />
+                      <p class="comment">
+                        Введите стартовую сумму
+                      </p>
                     </li>
                     <li>
                       <button class="btn-answer btn" data-goto="#q201" data-screen="#q06" data-video-id="0" type="button">Продолжить</button>
@@ -166,7 +170,7 @@
                 </div>
                 <div class="video">
                   <div class="player"></div>
-                  <button class="btn-answer btn" data-next-question="#q201" data-screen="#q06" type="button">Далее</button>
+                  <button class="btn-answer btn" data-next-question="#q201" data-screen="#q06" type="button">Открыть счёт</button>
                 </div>
               </div>
             </div>
@@ -189,6 +193,7 @@
                 </div>
                 <div class="video">
                   <div class="player"></div>
+                  <button class="btn-answer btn-consultation btn" data-next-question="#q101" data-screen="#q07" type="button">Получить консультацию</button>
                 </div>
               </div>
             </div>
@@ -213,7 +218,7 @@
                           <input class="form-input" id="BCOfflineForm_email" name="BCOfflineForm.email" placeholder="konstantinopolskykk@gmail.com" type="text" />
                         </div>
                         <div class="form-group">
-                          <select class="form-input" id="BCOfflineForm_city_id" name="BCOfflineForm.city_id">
+                          <select class="form-select" id="BCOfflineForm_city_id" name="BCOfflineForm.city_id" placeholder="Выберите город">
                             <option selected="selected" value="-1">
                               Выберите город
                             </option>
@@ -514,7 +519,7 @@
                           </select>
                         </div>
                         <div class="form-group">
-                          <label class="form-checkbox"><input checked="checked" id="BCOfflineForm_agree_opd" name="BCOfflineForm.agree_opd" type="checkbox" value="true" /><input name="BCOfflineForm.agree_opd" type="hidden" value="false" />Я согласен на передачу и обработку своих <a href="http://broker.ru/become_customer/agreement" id="show_agreement_window">персональных данных</a> </label>
+                          <label class="form-checkbox"><input checked="checked" id="BCOfflineForm_agree_opd" name="BCOfflineForm.agree_opd" type="checkbox" value="true" /> <input name="BCOfflineForm.agree_opd" type="hidden" value="false" />Я согласен на передачу и обработку своих <a href="http://broker.ru/become_customer/agreement" id="show_agreement_window">персональных данных</a></label>
                         </div>
                       </form>
                       <button class="btn-account btn" type="submit">Открыть счёт</button>
@@ -533,7 +538,7 @@
                   </h2>
                   <ul class="answers">
                     <li>
-                      <form id="BCOfflineForm">
+                      <form id="BCOfflineForm2">
                         <div class="form-group">
                           <input class="form-input" id="BCOfflineForm_fio" name="BCOfflineForm.fio" placeholder="Иванов Иван Иванович" type="text" />
                         </div>
@@ -544,7 +549,7 @@
                           <input class="form-input" id="BCOfflineForm_email" name="BCOfflineForm.email" placeholder="konstantinopolskykk@gmail.com" type="text" />
                         </div>
                         <div class="form-group">
-                          <select class="form-input" id="BCOfflineForm_city_id" name="BCOfflineForm.city_id">
+                          <select class="form-select" id="BCOfflineForm_city_id2" name="BCOfflineForm.city_id" placeholder="Выберите город">
                             <option selected="selected" value="-1">
                               Выберите город
                             </option>
@@ -845,7 +850,7 @@
                           </select>
                         </div>
                         <div class="form-group">
-                          <label class="form-checkbox"><input checked="checked" id="BCOfflineForm_agree_opd" name="BCOfflineForm.agree_opd" type="checkbox" value="true" /><input name="BCOfflineForm.agree_opd" type="hidden" value="false" />Я согласен на передачу и обработку своих <a href="http://broker.ru/become_customer/agreement" id="show_agreement_window">персональных данных</a> </label>
+                          <label class="form-checkbox"><input checked="checked" id="BCOfflineForm_agree_opd" name="BCOfflineForm.agree_opd" type="checkbox" value="true" /> <input name="BCOfflineForm.agree_opd" type="hidden" value="false" />Я согласен на передачу и обработку своих <a href="http://broker.ru/become_customer/agreement" id="show_agreement_window">персональных данных</a></label>
                         </div>
                       </form>
                       <button class="btn-account btn" type="submit">Отправить</button>
@@ -860,6 +865,7 @@
     </div>
     <script src="https://www.youtube.com/iframe_api"></script>
     <script src="assets/js/vendor/jquery.js"></script>
+    <script src="assets/js/vendor/selectize.js"></script>
     <script src="assets/js/main.js"></script>
   </body>
 </html>

@@ -6,6 +6,7 @@ html lang='ru'
     meta name='description' content='bcs, broker, video'
     meta name='viewport' content='width=device-width, initial-scale=1'
     link rel='stylesheet' href='assets/css/vendor/normalize.css'
+    link rel='stylesheet' href='assets/css/vendor/selectize.css'
     link rel='stylesheet' href='assets/css/main.css'
   body
     .main
@@ -105,12 +106,13 @@ html lang='ru'
                   h2.title С какой суммы вы хотели бы начать?
                   ul.answers
                     li
-                      input#investments-amount.form-input type='number' placeholder='300000'
+                      input#investments-amount.form-input type='number' placeholder='300000' value='300000'
+                      p.comment Введите стартовую сумму
                     li
                       button.btn-answer.btn type='button' data-screen='#q06' data-goto='#q201' data-video-id='0' Продолжить
                 .video
                   .player
-                  button.btn-answer.btn type='button' data-screen='#q06' data-next-question='#q201' Далее
+                  button.btn-answer.btn type='button' data-screen='#q06' data-next-question='#q201' Открыть счёт
           #q07.section.col
             .box
               .item
@@ -123,6 +125,7 @@ html lang='ru'
                       button.btn-answer.btn type='button' data-screen='#q07' data-video-id='0' Нет, я не готов инвестировать больше
                 .video
                   .player
+                  button.btn-answer.btn-consultation.btn type='button' data-screen='#q07' data-next-question='#q101' Получить консультацию
           #q201.section.col
             .box
               .item
@@ -139,7 +142,7 @@ html lang='ru'
                   h2.title Получить консультацию
                   ul.answers
                     li
-                      include _form
+                      include _form_2
                       button.btn-account.btn type='submit' Отправить
     //javascript:
       var tag = document.createElement('script');
@@ -149,4 +152,5 @@ html lang='ru'
       firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
     script src='https://www.youtube.com/iframe_api'
     script src='assets/js/vendor/jquery.js'
+    script src='assets/js/vendor/selectize.js'
     script src='assets/js/main.js'

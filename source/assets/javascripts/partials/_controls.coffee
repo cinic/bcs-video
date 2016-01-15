@@ -35,11 +35,11 @@ setPlayerWidth = ( width ) ->
 $ ->
   _containerWidth = $( '.container' ).width()
   setPlayerWidth _containerWidth
-  
+
   $( window ).on 'resize', ->
     setPlayerWidth _containerWidth
     #$( '.video .plyer iframe' ).css({'width': playerWidth[0], 'height': playerWidth[1]})
-      
+
   $( btnStart ).on 'click', ->
     $( '#first, #shadow' ).fadeOut fadeSpeed, ->
       $( '#q02' ).fadeIn fadeSpeed
@@ -54,7 +54,7 @@ $ ->
       _specialBtn = $(@).data( 'special' )
       _goto = $(@).data( 'goto' )
       _amount = $( '#investments-amount' ).val()
-      
+
       # set selfTrade in q03 section
       selfTrade = 1 if _set == 3 and _video == 0
       switch _set
@@ -64,9 +64,8 @@ $ ->
       if _set == 4 and _video == 1 then aggressive = 1
       if _set == 5 and $( '.answers li', _screen).length < 3
         $( '.answers li:last', _screen).removeClass( 'hidden' )
-      
+
       if _set == 6 and _amount != undefined
-        console.log _amount, minAmount
         if _amount <= 300000 and _amount > 50000
           _videoId = videos[_set][aggressive][selfTrade][1]
         else if _amount <= 1000000 and _amount > 300000
@@ -76,11 +75,17 @@ $ ->
         else if _amount > 3000000
             _videoId = videos[_set][aggressive][selfTrade][4]
         else
+          $( '.video', _screen ).children( 'button' ).text( 'Далее' )
           if minAmount == 0
             _videoId = videos[_set][aggressive][selfTrade][0]
           else
             _videoId = videos[7][0]
-            $( '.video', _screen ).children( 'button' ).remove()
+            setTimeout((->
+              $( '.video', _screen ).children( 'button' ).data( 'next-question', '#q101' )
+              $( '.video', _screen ).children( 'button' ).addClass( 'btn-consultation' ).text( 'Получить консультацию' )
+              ),
+              500
+            )
           _goto = '#q07'
           minAmount = 1
 
@@ -90,7 +95,7 @@ $ ->
         $( '.video .btn-answer', _screen).data( 'next-question', _specialBtn )
       else
         $( '.video .btn-answer', _screen).data( 'next-question', _goto )
-        
+
       if undefined == _video
         if player and typeof player.pauseVideo == 'function' then player.pauseVideo()
         $( _screen ).fadeOut 100, ->
