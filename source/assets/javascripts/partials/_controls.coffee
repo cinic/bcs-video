@@ -68,7 +68,7 @@ $ ->
       if _set == 6 and _amount != undefined
         if _amount < 300000 and _amount > 50000
           _videoId = videos[_set][aggressive][selfTrade][1]
-        else if _amount <= 1000000 and _amount > 300000
+        else if _amount <= 1000000 and _amount >= 300000
             _videoId = videos[_set][aggressive][selfTrade][2]
         else if _amount <= 3000000 and _amount > 1000000
             _videoId = videos[_set][aggressive][selfTrade][3]
